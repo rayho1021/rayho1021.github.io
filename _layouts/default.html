@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+    </div>
+  </header>
+
+  <main class="site-content">
+    <div class="main-layout-container"> {/* 新增一個容器來控制左右佈局 */}
+      <aside class="sidebar-nav-section"> {/* 左側欄 */}
+        <nav class="site-nav">
+          <ul>
+            <li><a href="{{ '/' | relative_url }}">首頁</a></li>
+            <li><a href="{{ '/about.html' | relative_url }}">關於我</a></li>
+          </ul>
+        </nav>
+        {/* 你可以在這裡添加更多側邊內容，例如個人照片、簡短介紹、社交媒體連結等 */}
+      </aside>
+
+      <section class="main-content-section"> {/* 右側主要內容 */}
+        {{ content }}
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -38,19 +38,19 @@ title: Ray Ho's Personal Website
 <div class="preview-container">
   <div class="preview-card">
     <h3>About Me</h3>
-    <p>簡短介紹你的背景、興趣或個人理念，吸引訪客點擊了解更多。</p>
+    <p>我的背景和經歷點，還沒放東西，點擊了解更多。</p>
     <a href="{{ '/about.html' | relative_url }}" class="read-more">Read More...</a>
   </div>
 
   <div class="preview-card">
     <h3>My Projects</h3>
-    <p>列出你最引以為傲的專案，並簡短描述它們的特色和技術，吸引訪客點擊查看。</p>
+    <p>我的一些專案，還沒放東西，點擊了解更多。</p>
     <a href="{{ '/projects.html' | relative_url }}" class="read-more">Read More...</a>
   </div>
 
   <div class="preview-card">
     <h3>My Articles</h3>
-    <p>分享你的技術文章、學習筆記或個人觀點，展現你的知識與見解。</p>
+    <p>我的文章部落格，學習筆記、閱讀心得或個人觀點，還沒放東西，點擊了解更多。</p>
     <a href="{{ '/articles.html' | relative_url }}" class="read-more">Read More...</a>
   </div>
 </div>

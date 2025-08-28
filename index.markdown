@@ -1,49 +1,71 @@
 ---
 layout: default
-title: "Ray Ho's Persenal Website"
-permalink: /
+title: Ray Ho's Personal Website
 ---
 
-<div class="profile-container">
-  <div class="left-section">
-    <div class="profile-photo">
-      <img src="{{ '/assets/images/picture.JPG' | relative_url }}" alt="你的個人照片">
+<nav class="nav-section">
+  <ul class="nav-links">
+    <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
+    <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
+    <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
+    <li><a href="{{ '/articles.html' | relative_url }}">Articles</a></li>
+  </ul>
+</nav>
+
+<div class="top-section-wrapper">
+  <div class="profile-container">
+    <div class="left-section">
+      <div class="profile-photo">
+        <img src="/assets/images/picture.JPG" alt="Ray Ho's Photo">
+      </div>
+      <div class="contact-info">
+        <h3>Information</h3>
+        <p><strong>Email</strong>: rechun5147@gmail.com</p>
+        <p><strong>Phone</strong>: (+886) 983-351-985</p>
+        <p><strong>Linkedin</strong>: www.linkedin.com/in/rayho-1021-profile</p>
+      </div>
     </div>
-    <div class="contact-info">
-      <h3><b>Information</b></h3>
-      <p><b>Email :</b></p>
-      <p>rechun5147@gmail.com</p>
-      <p><b>Phone : </b></p>
-      <p>(+886) 983-351-985</p>
-      <p><b>Linkedin : </b></p>
-      <p>www.linkedin.com/in/rayho-1021-profile</p>
+
+    <div class="right-section">
+      <div class="intro-section">
+        <h1>Hello! I'm Ray Ho</h1>
+        <p>I haven't come up with any ideas yet, wait a moment. :)</p>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="right-section">
-    <div class="intro-section">
-      <h1>Hello! I'm Ray Ho</h1>
-      <p>I haven't come up with any ideas yet, wait a moment. :) </p>
-    </div>
+<div class="preview-container">
+  <div class="preview-card">
+    <h3>About Me</h3>
+    <p>簡短介紹你的背景、興趣或個人理念，吸引訪客點擊了解更多。</p>
+    <a href="{{ '/about.html' | relative_url }}" class="read-more">Read More...</a>
+  </div>
 
-    <div class="nav-section">
-      <ul class="nav-links">
-        <li><a href="{{ '/resume' | relative_url }}">Resume</a></li>
-        <li><a href="{{ '/experience' | relative_url }}">Experience</a></li>
-        <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
-        <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
-      </ul>
-    </div>
+  <div class="preview-card">
+    <h3>My Projects</h3>
+    <p>列出你最引以為傲的專案，並簡短描述它們的特色和技術，吸引訪客點擊查看。</p>
+    <a href="{{ '/projects.html' | relative_url }}" class="read-more">Read More...</a>
+  </div>
 
+  <div class="preview-card">
+    <h3>My Articles</h3>
+    <p>分享你的技術文章、學習筆記或個人觀點，展現你的知識與見解。</p>
+    <a href="{{ '/articles.html' | relative_url }}" class="read-more">Read More...</a>
+  </div>
+</div>
+
+<div class="contact-section">
+  <div class="contact-container">
     <div class="contact-form-section">
-      <h3><b>Contact Me</b></h3>
+      <h3>Contact Me</h3>
       <form action="https://formspree.io/f/myzdzvpl" method="POST">
         <div class="form-group">
           <input type="text" name="first_name" placeholder="First Name*" required>
           <input type="text" name="last_name" placeholder="Last Name*" required>
         </div>
         <div class="form-group">
-          <input type="email" name="Email" placeholder="Email*" required>
+          <input type="email" name="_replyto" placeholder="Email*" required>
           <input type="text" name="message" placeholder="Type your message here...*" required>
         </div>
         <button type="submit">Submit</button>

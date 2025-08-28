@@ -38,7 +38,7 @@ title: Ray Ho's Personal Website
 <div class="preview-container">
   <div class="preview-card">
     <h3>About Me</h3>
-    <p>我的背景和經歷點，還沒放東西，點擊了解更多。</p>
+    <p>我的背景和經歷，還沒放東西，點擊了解更多。</p>
     <a href="{{ '/about.html' | relative_url }}" class="read-more">Read More...</a>
   </div>
 

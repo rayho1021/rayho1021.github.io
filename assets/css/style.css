@@ -4,152 +4,188 @@ body {
   line-height: 1.6;
   margin: 0;
   color: #333;
-  background-color: #f5f5f5;
+  background-color: #fff; /* 背景設為白色，保持乾淨 */
 }
 
-.header-container, .main-layout-container, .content-container {
-  max-width: 1000px; /* 增加最大寬度以容納左右佈局 */
-  margin: 0 auto;
+.profile-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 1px auto;
   padding: 0 20px;
+  gap: 60px;
+  justify-content: center;
 }
 
-/* --- 頁首 (保持置中，只放標題) --- */
-.site-header {
-  background-color: #fff;
-  border-bottom: 2px solid #eee;
-  padding: 30px 0; /* 增加上下間距 */
+.left-section {
+  flex: 0 0 260px; /* 左側固定寬度 */
   text-align: center;
-  margin-bottom: 20px; /* 頁首下方留點空間 */
 }
 
-.site-title {
-  font-size: 2.8em; /* 再次放大標題 */
-  font-weight: bold;
-  letter-spacing: -1px;
-  color: #2c3e50;
-  text-decoration: none;
-  display: block;
+.right-section {
+  flex: 1; /* 右側佔據剩餘空間 */
+  margin-top: 10px;
 }
 
-/* --- 主要內容區塊的左右佈局 --- */
-.main-layout-container {
-  display: flex; /* 啟用 Flexbox 佈局 */
-  gap: 30px; /* 左右欄之間的間距 */
-  align-items: flex-start; /* 讓內容從頂部對齊 */
-}
-
-.sidebar-nav-section {
-  flex: 0 0 250px; /* 固定左側欄寬度為 250px */
-  background-color: #fff;
-  border: 1px solid #ddd; /* 增加邊框 */
-  border-radius: 8px; /* 圓角 */
-  padding: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
-}
-
-.site-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.site-nav li {
-  margin-bottom: 10px;
-}
-
-.site-nav a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 500;
-  padding: 8px 12px;
-  display: block; /* 讓連結佔滿空間，點擊區域更大 */
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.site-nav a:hover {
-  background-color: #eaf2f8; /* 滑鼠移上時背景變淺藍 */
-  color: #3498db;
-}
-
-.main-content-section {
-  flex: 1; /* 右側主要內容佔據剩餘空間 */
-  background-color: #fff;
-  border: 1px solid #ddd; /* 增加邊框 */
-  border-radius: 8px; /* 圓角 */
-  padding: 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
-}
-
-/* --- 文章列表樣式 --- */
-.post-listing h2 { /* Posts 標題 */
-  font-size: 1.8em;
-  margin-top: 0;
-  color: #2c3e50;
-  border-bottom: 1px solid #eee; /* Posts 標題下劃線 */
-  padding-bottom: 15px;
-  margin-bottom: 25px;
-}
-
-.post-listing ul {
-  list-style: none;
-  padding: 0;
-}
-
-.post-listing li {
-  /* 這裡取消了每個文章項目的單獨框線，因為主要內容區塊已經有大框線 */
-  /* 如果你還想讓每篇文章都有框線，可以把這裡的樣式重新打開或調整 */
+/* --- 大頭貼樣式 --- */
+.profile-photo img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%; /* 製作圓形效果 */
+  border: 1px solid #ddd;
+  object-fit: cover;
+  margin-top: 15px;
   margin-bottom: 20px;
 }
 
-.post-link {
+/* --- 聯絡資訊樣式 --- */
+.contact-info {
+  text-align: left;
+}
+
+.contact-info h3 {
+  font-size: 1.2em;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  border-bottom: 4px solid #eee;
+  padding-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 0.9em;
+  line-height: 1;
+  margin: 0;
+  margin-top: 10px;
+}
+
+/* --- 標題與簡介樣式 --- */
+.intro-section h1 {
+  font-size: 2.8em;
+  margin-left: 50px;
+  letter-spacing: -1px;
+}
+
+.intro-section p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.3;
+  margin-left: 70px;
+}
+
+/* --- 導航連結樣式 (Resume, Experience, Bxlog) --- */
+.nav-section {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 50px;
+}
+
+.nav-links li a {
   text-decoration: none;
-  color: #2980b9;
   font-weight: bold;
-  font-size: 1.3em; /* 稍微放大文章連結字體 */
-  display: block; /* 讓連結佔據一行 */
+  font-size: 1.5em;
+  color: #333;
+  position: relative;
 }
 
-.post-date {
-  font-size: 0.9em;
-  color: #7f8c8d;
-  display: block;
-  margin-top: 5px;
+.nav-links li a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #333;
 }
 
-/* --- RSS 連結樣式 --- */
-.rss-subscribe-section { /* 給 RSS 連結一個區塊 */
-  margin-top: 30px;
-  text-align: right;
-  font-size: 0.9em;
-}
-.rss-subscribe-section a {
-  color: #3498db;
-  text-decoration: none;
+/* --- 聯絡表單樣式 --- */
+.contact-form-section h3 {
+  font-size: 1.2em;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  margin-left: 50px;
   font-weight: 500;
 }
-.rss-subscribe-section a:hover {
-  text-decoration: underline;
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
 }
 
-/* --- 頁腳 --- */
-.site-footer {
-  text-align: center;
-  padding: 25px;
-  color: #95a5a6;
-  border-top: 1px solid #eee;
-  margin-top: 40px;
-  font-size: 0.9em;
-  background-color: #fff; /* 頁腳也給個白色背景 */
+input[type="text"], input[type="email"], textarea {
+  padding: 8px;
+  width: 30%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+
+button[type="submit"] {
+  padding: 7px 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  margin-top: 5px;
+  margin-right: 160px;
+  cursor: pointer;
+  font-size: 0.8em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  float: right;
+}
+
+button[type="submit"]:hover {
+  background-color: #333;
 }
 
 /* --- 手機響應式調整 --- */
 @media (max-width: 768px) {
-  .main-layout-container {
-    flex-direction: column; /* 在小螢幕上改為上下堆疊 */
+  .profile-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .left-section, .right-section {
+    flex: auto;
+  }
+  .profile-photo {
+    margin-bottom: 0;
+  }
+  .nav-links {
+    flex-wrap: wrap;
     gap: 20px;
   }
-  .sidebar-nav-section {
-    flex: auto; /* 讓側邊欄自動佔滿寬度 */
-  }
+}
+
+/* --- 分頁內容排版 --- */
+.page-container {
+  max-width: 800px; /* 設定頁面最大寬度 */
+  margin: 40px auto; /* 讓頁面內容置中 */
+  padding: 0 20px;
+}
+
+.page-container h1 {
+  font-size: 2.5em;
+  border-bottom: 2px solid #333; /* 標題下方的粗線 */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.page-content p, .page-content li {
+  font-size: 1.1em;
+  line-height: 1.7;
 }

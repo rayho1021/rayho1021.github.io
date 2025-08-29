@@ -190,6 +190,7 @@ body {
   padding: 80px 20px 50px; /* 增加頂部間距 */
   background-color: #fff;
   border-top: 1px solid #eee;
+  box-sizing: border-box; 
 }
 
 .contact-container {
@@ -267,7 +268,7 @@ button[type="submit"]:hover {
   .contact-info {
     text-align: center; /* 手機上資訊置中 */
     margin-top: 10px; /* 調整間距 */
-    padding-top: 10px;
+    padding: 40px 10px;
   }
 
   .contact-info h3 {

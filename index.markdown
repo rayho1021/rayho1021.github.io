@@ -3,15 +3,6 @@ layout: default
 title: Ray Ho's Personal Website
 ---
 
-<nav class="nav-section">
-  <ul class="nav-links">
-    <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
-    <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
-    <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
-    <li><a href="{{ '/articles.html' | relative_url }}">Articles</a></li>
-  </ul>
-</nav>
-
 <div class="top-section-wrapper">
   <div class="profile-container">
     <div class="left-section">

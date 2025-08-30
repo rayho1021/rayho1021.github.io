@@ -5,22 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   </head>
   <body>
+    <!-- 懸浮式圓形導航選單 -->
     <nav class="nav-section">
       <ul class="nav-links">
-        <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
-        <li><a href="{{ '/about.html' | relative_url }}" class="{% if page.url == '/about.html' %}active{% endif %}">About</a></li>
-        <li><a href="{{ '/projects.html' | relative_url }}" class="{% if page.url == '/projects.html' %}active{% endif %}">Projects</a></li>
-        <li><a href="{{ '/articles.html' | relative_url }}" class="{% if page.url == '/articles.html' %}active{% endif %}">Articles</a></li>
+        <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}"><span>Home</span></a></li>
+        <li><a href="{{ '/about.html' | relative_url }}" class="{% if page.url == '/about.html' %}active{% endif %}"><span>About</span></a></li>
+        <li><a href="{{ '/projects.html' | relative_url }}" class="{% if page.url == '/projects.html' %}active{% endif %}"><span>Projects</span></a></li>
+        <li><a href="{{ '/articles.html' | relative_url }}" class="{% if page.url == '/articles.html' %}active{% endif %}"><span>Articles</span></a></li>
       </ul>
     </nav>
     
-    {{ content }}
+    <!-- 主要內容區域 -->
+    <main>
+      {{ content }}
+    </main>
 
-    <div class="footer-section">
-      <p>&copy; 2025 Ray Ho's Portfolio. All Rights Reserved.</p>
-    </div>
+    <!-- 統一頁尾設計 -->
+    <footer class="footer-section">
+      <p>&copy; 2025 Ray Ho's Portfolio. All Rights Reserved. 💫</p>
+    </footer>
+
+    <!-- 頁面載入動畫 -->
+    <script>
+      // 頁面載入完成後的動畫效果
+      document.addEventListener('DOMContentLoaded', function() {
+        // 為卡片添加漸進載入動畫
+        const cards = document.querySelectorAll('.preview-card, .post-item');
+        cards.forEach((card, index) => {
+          card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // 導航選單互動增強
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+          link.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.15) rotate(5deg)';
+          });
+          
+          link.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+              this.style.transform = 'scale(1) rotate(0deg)';
+            }
+          });
+        });
+
+        // 滾動視差效果
+        window.addEventListener('scroll', function() {
+          const scrolled = window.pageYOffset;
+          const parallax = document.querySelector('.top-section-wrapper::after');
+          if (parallax) {
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+          }
+        });
+
+        // 表單提交動畫
+        const submitBtn = document.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.addEventListener('click', function(e) {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              this.style.transform = 'scale(1)';
+            }, 150);
+          });
+        }
+      });
+    </script>
   </body>
 </html>
